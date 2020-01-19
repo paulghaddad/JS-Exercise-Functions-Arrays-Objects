@@ -82,10 +82,8 @@ function getName(person) {
 function makeSmartPerson(name) {
   const smartPerson = {
     name,
-    sum: function(x, y) {
-      return x + y
-    },
-    speak: function() {
+    sum(x, y) { return x + y },
+    speak() {
       return `Hello, my name is ${this.name}`
     }
   }
@@ -128,6 +126,7 @@ function get3rdCar(inventory) {
   const the3rd = inventory.find((item, index) => {
     return index === 2 // we use 2 because index is zero-based.
   })
+
   return `The car is a ${the3rd.car_make} ${the3rd.car_model}`
 }
 
@@ -296,7 +295,7 @@ const argTimesTwo = num => num * 2;
 function carMaker(odometerReading) {
   return {
     odometer: odometerReading,
-    drive: function(distance) {
+    drive(distance) {
       this.odometer += distance;
       return this.odometer
     }
